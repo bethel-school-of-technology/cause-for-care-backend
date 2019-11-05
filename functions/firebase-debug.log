@@ -1,0 +1,410 @@
+[debug] [2019-11-01T16:34:01.699Z] ----------------------------------------------------------------------
+[debug] [2019-11-01T16:34:01.702Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2019-11-01T16:34:01.702Z] CLI Version:   7.6.2
+[debug] [2019-11-01T16:34:01.702Z] Platform:      darwin
+[debug] [2019-11-01T16:34:01.702Z] Node Version:  v8.16.0
+[debug] [2019-11-01T16:34:01.702Z] Time:          Fri Nov 01 2019 12:34:01 GMT-0400 (EDT)
+[debug] [2019-11-01T16:34:01.703Z] ----------------------------------------------------------------------
+[debug] [2019-11-01T16:34:01.703Z] 
+[debug] [2019-11-01T16:34:01.713Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-11-01T16:34:01.713Z] > authorizing via signed-in user
+[debug] [2019-11-01T16:34:01.713Z] [iam] checking project cause-for-care for permissions ["firebase.projects.get"]
+[debug] [2019-11-01T16:34:01.715Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-11-01T16:34:01.715Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-11-01T16:34:01.952Z] <<< HTTP RESPONSE 200
+[debug] [2019-11-01T16:34:01.964Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/cause-for-care:testIamPermissions  
+
+[debug] [2019-11-01T16:34:02.467Z] <<< HTTP RESPONSE 200
+[debug] [2019-11-01T16:34:02.468Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/cause-for-care  
+ 
+[debug] [2019-11-01T16:34:02.770Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/davidcajas/Desktop/care-dot-com'...
+[info] 
+[info] ✔  functions: Using node@8 from host.
+[info] ✔  functions: Emulator started at http://localhost:5000
+[info] i  functions: Watching "/Users/davidcajas/Desktop/care-dot-com/functions" for Cloud Functions...
+[debug] [2019-11-01T16:34:03.069Z] [worker-~diagnostic~-21467498-d9f8-4b53-9dba-0e7c6231270b]: BUSY
+[debug] [2019-11-01T16:34:03.415Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/davidcajas/Desktop/care-dot-com/functions","node_version":"8.16.0"}
+[debug] [2019-11-01T16:34:03.417Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-01T16:34:03.419Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-01T16:34:03.424Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T16:34:03.426Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[info] ✔  functions[api]: http function initialized (http://localhost:5000/cause-for-care/us-central1/api).
+[debug] [2019-11-01T16:34:04.417Z] [worker-~diagnostic~-21467498-d9f8-4b53-9dba-0e7c6231270b]: exited
+[debug] [2019-11-01T16:34:04.418Z] [worker-~diagnostic~-21467498-d9f8-4b53-9dba-0e7c6231270b]: FINISHED
+[debug] [2019-11-01T16:34:21.249Z] Accepted request GET /cause-for-care/us-central1/api/signup --> api
+[debug] [2019-11-01T16:34:21.314Z] [worker-api-d868e33d-789c-47c3-a0f3-52c2df2e7447]: BUSY
+[debug] [2019-11-01T16:34:21.922Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/davidcajas/Desktop/care-dot-com/functions","node_version":"8.16.0"}
+[debug] [2019-11-01T16:34:21.925Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-01T16:34:21.927Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-01T16:34:21.928Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T16:34:21.929Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T16:34:22.591Z] [runtime-status] Trigger "api" has been found, beginning invocation! {}
+[info] i  functions: Beginning execution of "api"
+[debug] [2019-11-01T16:34:22.591Z] [runtime-status]  {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2019-11-01T16:34:22.591Z] [runtime-status] Running api in mode HTTPS {}
+[debug] [2019-11-01T16:34:22.600Z] {"socketPath":"/var/folders/1d/y02ldx9s45l1h7hsnkzv_c9h0000gn/T/firebase_emulator_invocation_3203.sock"}
+[debug] [2019-11-01T16:34:22.602Z] [functions] Runtime ready! Sending request! {"socketPath":"/var/folders/1d/y02ldx9s45l1h7hsnkzv_c9h0000gn/T/firebase_emulator_invocation_3203.sock"}
+[debug] [2019-11-01T16:34:22.627Z] [runtime-status] Ephemeral server used! {}
+[debug] [2019-11-01T16:34:22.635Z] [runtime-status] Ephemeral server survived. {}
+[info] i  functions: Finished "api" in ~1s
+[debug] [2019-11-01T16:34:22.637Z] [worker-api-d868e33d-789c-47c3-a0f3-52c2df2e7447]: IDLE
+[debug] [2019-11-01T16:35:16.765Z] File /Users/davidcajas/Desktop/care-dot-com/functions/index.js changed, reloading triggers
+[debug] [2019-11-01T16:35:17.770Z] [worker-pool]: Shutting down IDLE worker (api)
+[debug] [2019-11-01T16:35:17.773Z] [worker-~diagnostic~-2d6ad960-abe7-4ac1-9288-c194bb165b95]: BUSY
+[debug] [2019-11-01T16:35:17.776Z] [worker-api-d868e33d-789c-47c3-a0f3-52c2df2e7447]: exited
+[debug] [2019-11-01T16:35:17.776Z] [worker-api-d868e33d-789c-47c3-a0f3-52c2df2e7447]: FINISHED
+[debug] [2019-11-01T16:35:18.145Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/davidcajas/Desktop/care-dot-com/functions","node_version":"8.16.0"}
+[debug] [2019-11-01T16:35:18.147Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-01T16:35:18.149Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-01T16:35:18.150Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T16:35:18.152Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T16:35:18.809Z] [worker-~diagnostic~-2d6ad960-abe7-4ac1-9288-c194bb165b95]: exited
+[debug] [2019-11-01T16:35:18.809Z] [worker-~diagnostic~-2d6ad960-abe7-4ac1-9288-c194bb165b95]: FINISHED
+[debug] [2019-11-01T16:42:01.875Z] File /Users/davidcajas/Desktop/care-dot-com/functions/index.js changed, reloading triggers
+[debug] [2019-11-01T16:42:02.882Z] [worker-~diagnostic~-8e576197-6cde-4f04-a96e-255aebe76cec]: BUSY
+[debug] [2019-11-01T16:42:03.317Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/davidcajas/Desktop/care-dot-com/functions","node_version":"8.16.0"}
+[debug] [2019-11-01T16:42:03.321Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-01T16:42:03.328Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-01T16:42:03.329Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T16:42:03.331Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T16:42:04.399Z] [worker-~diagnostic~-8e576197-6cde-4f04-a96e-255aebe76cec]: exited
+[debug] [2019-11-01T16:42:04.399Z] [worker-~diagnostic~-8e576197-6cde-4f04-a96e-255aebe76cec]: FINISHED
+[debug] [2019-11-01T16:45:13.876Z] File /Users/davidcajas/Desktop/care-dot-com/functions/index.js changed, reloading triggers
+[debug] [2019-11-01T16:45:14.882Z] [worker-~diagnostic~-1992a3c1-c43c-4ff4-824c-e7961df2047b]: BUSY
+[debug] [2019-11-01T16:45:15.233Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/davidcajas/Desktop/care-dot-com/functions","node_version":"8.16.0"}
+[debug] [2019-11-01T16:45:15.236Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-01T16:45:15.238Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-01T16:45:15.239Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T16:45:15.240Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T16:45:16.268Z] [worker-~diagnostic~-1992a3c1-c43c-4ff4-824c-e7961df2047b]: exited
+[debug] [2019-11-01T16:45:16.269Z] [worker-~diagnostic~-1992a3c1-c43c-4ff4-824c-e7961df2047b]: FINISHED
+[debug] [2019-11-01T16:50:53.919Z] File /Users/davidcajas/Desktop/care-dot-com/functions/index.js changed, reloading triggers
+[debug] [2019-11-01T16:50:54.922Z] [worker-~diagnostic~-37826036-fa3b-49c3-ac5c-3e3eb4fcb963]: BUSY
+[debug] [2019-11-01T16:50:55.170Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/davidcajas/Desktop/care-dot-com/functions","node_version":"8.16.0"}
+[debug] [2019-11-01T16:50:55.174Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-01T16:50:55.174Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-01T16:50:55.176Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T16:50:55.178Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T16:50:55.673Z] [worker-~diagnostic~-37826036-fa3b-49c3-ac5c-3e3eb4fcb963]: exited
+[debug] [2019-11-01T16:50:55.673Z] [worker-~diagnostic~-37826036-fa3b-49c3-ac5c-3e3eb4fcb963]: FINISHED
+[debug] [2019-11-01T16:51:25.372Z] File /Users/davidcajas/Desktop/care-dot-com/functions/index.js changed, reloading triggers
+[debug] [2019-11-01T16:51:26.379Z] [worker-~diagnostic~-fb0ac19d-5e1d-4f7f-b299-aa8618118118]: BUSY
+[debug] [2019-11-01T16:51:26.632Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/davidcajas/Desktop/care-dot-com/functions","node_version":"8.16.0"}
+[debug] [2019-11-01T16:51:26.634Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-01T16:51:26.635Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-01T16:51:26.636Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T16:51:26.637Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T16:51:27.082Z] [worker-~diagnostic~-fb0ac19d-5e1d-4f7f-b299-aa8618118118]: exited
+[debug] [2019-11-01T16:51:27.082Z] [worker-~diagnostic~-fb0ac19d-5e1d-4f7f-b299-aa8618118118]: FINISHED
+[debug] [2019-11-01T17:04:50.737Z] File /Users/davidcajas/Desktop/care-dot-com/functions/index.js changed, reloading triggers
+[debug] [2019-11-01T17:04:51.746Z] [worker-~diagnostic~-6952824c-c392-4a4b-a201-938bd0a977fa]: BUSY
+[debug] [2019-11-01T17:04:52.338Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/davidcajas/Desktop/care-dot-com/functions","node_version":"8.16.0"}
+[debug] [2019-11-01T17:04:52.339Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-01T17:04:52.343Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-01T17:04:52.345Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T17:04:52.346Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T17:04:53.278Z] [worker-~diagnostic~-6952824c-c392-4a4b-a201-938bd0a977fa]: exited
+[debug] [2019-11-01T17:04:53.278Z] [worker-~diagnostic~-6952824c-c392-4a4b-a201-938bd0a977fa]: FINISHED
+[debug] [2019-11-01T17:25:53.038Z] File /Users/davidcajas/Desktop/care-dot-com/functions/index.js changed, reloading triggers
+[debug] [2019-11-01T17:25:54.052Z] [worker-~diagnostic~-648b3ac1-ee55-407b-bd4c-3ddd302b03d9]: BUSY
+[debug] [2019-11-01T17:25:54.627Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/davidcajas/Desktop/care-dot-com/functions","node_version":"8.16.0"}
+[debug] [2019-11-01T17:25:54.629Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-01T17:25:54.642Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-01T17:25:54.642Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T17:25:54.643Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T17:25:55.780Z] [worker-~diagnostic~-648b3ac1-ee55-407b-bd4c-3ddd302b03d9]: exited
+[debug] [2019-11-01T17:25:55.780Z] [worker-~diagnostic~-648b3ac1-ee55-407b-bd4c-3ddd302b03d9]: FINISHED
+[debug] [2019-11-01T17:48:03.738Z] ----------------------------------------------------------------------
+[debug] [2019-11-01T17:48:03.740Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2019-11-01T17:48:03.740Z] CLI Version:   7.6.2
+[debug] [2019-11-01T17:48:03.740Z] Platform:      darwin
+[debug] [2019-11-01T17:48:03.740Z] Node Version:  v8.16.0
+[debug] [2019-11-01T17:48:03.741Z] Time:          Fri Nov 01 2019 13:48:03 GMT-0400 (EDT)
+[debug] [2019-11-01T17:48:03.741Z] ----------------------------------------------------------------------
+[debug] [2019-11-01T17:48:03.741Z] 
+[debug] [2019-11-01T17:48:03.780Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-11-01T17:48:03.780Z] > authorizing via signed-in user
+[debug] [2019-11-01T17:48:03.780Z] [iam] checking project cause-for-care for permissions ["firebase.projects.get"]
+[debug] [2019-11-01T17:48:03.781Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-11-01T17:48:03.782Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-11-01T17:48:04.017Z] <<< HTTP RESPONSE 200
+[debug] [2019-11-01T17:48:04.033Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/cause-for-care:testIamPermissions  
+
+[debug] [2019-11-01T17:48:04.237Z] <<< HTTP RESPONSE 200
+[debug] [2019-11-01T17:48:04.238Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/cause-for-care  
+ 
+[debug] [2019-11-01T17:48:04.592Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/davidcajas/Desktop/care-dot-com'...
+[info] 
+[info] ✔  functions: Using node@8 from host.
+[info] ✔  functions: Emulator started at http://localhost:5000
+[info] i  functions: Watching "/Users/davidcajas/Desktop/care-dot-com/functions" for Cloud Functions...
+[debug] [2019-11-01T17:48:04.896Z] [worker-~diagnostic~-75128fb0-1f62-4d79-aeb8-d431ef93acdb]: BUSY
+[debug] [2019-11-01T17:48:05.158Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/davidcajas/Desktop/care-dot-com/functions","node_version":"8.16.0"}
+[debug] [2019-11-01T17:48:05.158Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-01T17:48:05.161Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-01T17:48:05.168Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T17:48:05.169Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[info] ✔  functions[api]: http function initialized (http://localhost:5000/cause-for-care/us-central1/api).
+[debug] [2019-11-01T17:48:05.984Z] [worker-~diagnostic~-75128fb0-1f62-4d79-aeb8-d431ef93acdb]: exited
+[debug] [2019-11-01T17:48:05.984Z] [worker-~diagnostic~-75128fb0-1f62-4d79-aeb8-d431ef93acdb]: FINISHED
+[debug] [2019-11-01T17:48:31.904Z] Accepted request POST /cause-for-care/us-central1/api/signup --> api
+[debug] [2019-11-01T17:48:31.909Z] [worker-api-30394be5-9bcf-4ba0-bbeb-d69f92e09b63]: BUSY
+[debug] [2019-11-01T17:48:32.165Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/davidcajas/Desktop/care-dot-com/functions","node_version":"8.16.0"}
+[debug] [2019-11-01T17:48:32.166Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-01T17:48:32.168Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-01T17:48:32.169Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T17:48:32.169Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T17:48:32.558Z] [runtime-status] Trigger "api" has been found, beginning invocation! {}
+[info] i  functions: Beginning execution of "api"
+[debug] [2019-11-01T17:48:32.559Z] [runtime-status]  {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2019-11-01T17:48:32.559Z] [runtime-status] Running api in mode HTTPS {}
+[debug] [2019-11-01T17:48:32.564Z] {"socketPath":"/var/folders/1d/y02ldx9s45l1h7hsnkzv_c9h0000gn/T/firebase_emulator_invocation_3505.sock"}
+[debug] [2019-11-01T17:48:32.566Z] [functions] Runtime ready! Sending request! {"socketPath":"/var/folders/1d/y02ldx9s45l1h7hsnkzv_c9h0000gn/T/firebase_emulator_invocation_3505.sock"}
+[debug] [2019-11-01T17:48:32.599Z] [runtime-status] Ephemeral server used! {}
+[debug] [2019-11-01T17:48:33.090Z] [runtime-status] Ephemeral server survived. {}
+[info] i  functions: Finished "api" in ~2s
+[debug] [2019-11-01T17:48:34.689Z] [worker-api-30394be5-9bcf-4ba0-bbeb-d69f92e09b63]: IDLE
+[debug] [2019-11-01T17:49:45.020Z] Accepted request POST /cause-for-care/us-central1/api/signup --> api
+[debug] [2019-11-01T17:49:45.020Z] [worker-api-30394be5-9bcf-4ba0-bbeb-d69f92e09b63]: BUSY
+[debug] [2019-11-01T17:49:45.021Z] [runtime-status] Trigger "api" has been found, beginning invocation! {}
+[info] i  functions: Beginning execution of "api"
+[debug] [2019-11-01T17:49:45.021Z] [runtime-status]  {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2019-11-01T17:49:45.021Z] [runtime-status] Running api in mode HTTPS {}
+[debug] [2019-11-01T17:49:45.023Z] {"socketPath":"/var/folders/1d/y02ldx9s45l1h7hsnkzv_c9h0000gn/T/firebase_emulator_invocation_3505.sock"}
+[debug] [2019-11-01T17:49:45.024Z] [functions] Runtime ready! Sending request! {"socketPath":"/var/folders/1d/y02ldx9s45l1h7hsnkzv_c9h0000gn/T/firebase_emulator_invocation_3505.sock"}
+[debug] [2019-11-01T17:49:45.029Z] [runtime-status] Ephemeral server used! {}
+[debug] [2019-11-01T17:49:45.029Z] [runtime-status] Ephemeral server survived. {}
+[info] >  { [Error: The email address is already in use by another account.]
+[info] >    code: 'auth/email-already-in-use',
+[info] >    message: 'The email address is already in use by another account.' }
+[info] i  functions: Finished "api" in ~1s
+[debug] [2019-11-01T17:49:45.593Z] [worker-api-30394be5-9bcf-4ba0-bbeb-d69f92e09b63]: IDLE
+[debug] [2019-11-01T17:52:05.374Z] File /Users/davidcajas/Desktop/care-dot-com/functions/index.js changed, reloading triggers
+[debug] [2019-11-01T17:52:06.378Z] [worker-pool]: Shutting down IDLE worker (api)
+[debug] [2019-11-01T17:52:06.382Z] [worker-~diagnostic~-03f3619e-5669-43f1-a19f-b58db6953378]: BUSY
+[debug] [2019-11-01T17:52:06.385Z] [worker-api-30394be5-9bcf-4ba0-bbeb-d69f92e09b63]: exited
+[debug] [2019-11-01T17:52:06.386Z] [worker-api-30394be5-9bcf-4ba0-bbeb-d69f92e09b63]: FINISHED
+[debug] [2019-11-01T17:52:06.741Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/davidcajas/Desktop/care-dot-com/functions","node_version":"8.16.0"}
+[debug] [2019-11-01T17:52:06.743Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-01T17:52:06.745Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-01T17:52:06.746Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T17:52:06.747Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[warn] ⚠  /Users/davidcajas/Desktop/care-dot-com/functions/index.js:114
+      if (err.code === 'auth/email-already-in-use") {
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+SyntaxError: Invalid or unexpected token
+    at createScript (vm.js:80:10)
+    at Object.runInThisContext (vm.js:139:10)
+    at Module._compile (module.js:617:28)
+    at Object.Module._extensions..js (module.js:664:10)
+    at Module.load (module.js:566:32)
+    at tryModuleLoad (module.js:506:12)
+    at Function.Module._load (module.js:498:3)
+    at Module.require (module.js:597:17)
+    at require (internal/module.js:11:18)
+    at /usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:709:33
+[warn] ⚠  We were unable to load your functions code. (see above)
+[debug] [2019-11-01T17:52:06.847Z] [worker-~diagnostic~-03f3619e-5669-43f1-a19f-b58db6953378]: exited
+[debug] [2019-11-01T17:52:06.847Z] [worker-~diagnostic~-03f3619e-5669-43f1-a19f-b58db6953378]: FINISHED
+[debug] [2019-11-01T17:52:18.139Z] File /Users/davidcajas/Desktop/care-dot-com/functions/index.js changed, reloading triggers
+[debug] [2019-11-01T17:52:18.239Z] File /Users/davidcajas/Desktop/care-dot-com/functions/index.js changed, reloading triggers
+[debug] [2019-11-01T17:52:19.246Z] [worker-~diagnostic~-b29f70f5-b722-40ac-901a-6ebfe97b0a66]: BUSY
+[debug] [2019-11-01T17:52:19.550Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/davidcajas/Desktop/care-dot-com/functions","node_version":"8.16.0"}
+[debug] [2019-11-01T17:52:19.552Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-01T17:52:19.554Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-01T17:52:19.555Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T17:52:19.556Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[warn] ⚠  /Users/davidcajas/Desktop/care-dot-com/functions/index.js:114
+      if (err.code === 'auth/email-already-in-use") {
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+SyntaxError: Invalid or unexpected token
+    at createScript (vm.js:80:10)
+    at Object.runInThisContext (vm.js:139:10)
+    at Module._compile (module.js:617:28)
+    at Object.Module._extensions..js (module.js:664:10)
+    at Module.load (module.js:566:32)
+    at tryModuleLoad (module.js:506:12)
+    at Function.Module._load (module.js:498:3)
+    at Module.require (module.js:597:17)
+    at require (internal/module.js:11:18)
+    at /usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:709:33
+[warn] ⚠  We were unable to load your functions code. (see above)
+[debug] [2019-11-01T17:52:19.611Z] [worker-~diagnostic~-b29f70f5-b722-40ac-901a-6ebfe97b0a66]: exited
+[debug] [2019-11-01T17:52:19.612Z] [worker-~diagnostic~-b29f70f5-b722-40ac-901a-6ebfe97b0a66]: FINISHED
+[debug] [2019-11-01T17:52:20.580Z] File /Users/davidcajas/Desktop/care-dot-com/functions/index.js changed, reloading triggers
+[debug] [2019-11-01T17:52:20.681Z] File /Users/davidcajas/Desktop/care-dot-com/functions/index.js changed, reloading triggers
+[debug] [2019-11-01T17:52:21.686Z] [worker-~diagnostic~-edbdafcc-899d-412c-93ca-8ce27b48e578]: BUSY
+[debug] [2019-11-01T17:52:21.940Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/davidcajas/Desktop/care-dot-com/functions","node_version":"8.16.0"}
+[debug] [2019-11-01T17:52:21.941Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-01T17:52:21.943Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-01T17:52:21.944Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T17:52:21.944Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[warn] ⚠  /Users/davidcajas/Desktop/care-dot-com/functions/index.js:114
+      if (err.code === 'auth/email-already-in-use") {
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+SyntaxError: Invalid or unexpected token
+    at createScript (vm.js:80:10)
+    at Object.runInThisContext (vm.js:139:10)
+    at Module._compile (module.js:617:28)
+    at Object.Module._extensions..js (module.js:664:10)
+    at Module.load (module.js:566:32)
+    at tryModuleLoad (module.js:506:12)
+    at Function.Module._load (module.js:498:3)
+    at Module.require (module.js:597:17)
+    at require (internal/module.js:11:18)
+    at /usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:709:33
+[warn] ⚠  We were unable to load your functions code. (see above)
+[debug] [2019-11-01T17:52:22.000Z] [worker-~diagnostic~-edbdafcc-899d-412c-93ca-8ce27b48e578]: exited
+[debug] [2019-11-01T17:52:22.000Z] [worker-~diagnostic~-edbdafcc-899d-412c-93ca-8ce27b48e578]: FINISHED
+[debug] [2019-11-01T17:52:39.262Z] File /Users/davidcajas/Desktop/care-dot-com/functions/index.js changed, reloading triggers
+[debug] [2019-11-01T17:52:40.265Z] [worker-~diagnostic~-563d3fb7-179d-4de3-93a4-7f69a891f949]: BUSY
+[debug] [2019-11-01T17:52:40.507Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/davidcajas/Desktop/care-dot-com/functions","node_version":"8.16.0"}
+[debug] [2019-11-01T17:52:40.509Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-01T17:52:40.510Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-01T17:52:40.511Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T17:52:40.512Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T17:52:41.128Z] [worker-~diagnostic~-563d3fb7-179d-4de3-93a4-7f69a891f949]: exited
+[debug] [2019-11-01T17:52:41.128Z] [worker-~diagnostic~-563d3fb7-179d-4de3-93a4-7f69a891f949]: FINISHED
+[debug] [2019-11-01T17:52:50.040Z] File /Users/davidcajas/Desktop/care-dot-com/functions/index.js changed, reloading triggers
+[debug] [2019-11-01T17:52:50.141Z] File /Users/davidcajas/Desktop/care-dot-com/functions/index.js changed, reloading triggers
+[debug] [2019-11-01T17:52:51.143Z] [worker-~diagnostic~-c3911c8f-91ea-40e2-96e1-154ecf645c10]: BUSY
+[debug] [2019-11-01T17:52:51.390Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/davidcajas/Desktop/care-dot-com/functions","node_version":"8.16.0"}
+[debug] [2019-11-01T17:52:51.391Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-01T17:52:51.393Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-01T17:52:51.394Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T17:52:51.394Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T17:52:51.842Z] [worker-~diagnostic~-c3911c8f-91ea-40e2-96e1-154ecf645c10]: exited
+[debug] [2019-11-01T17:52:51.842Z] [worker-~diagnostic~-c3911c8f-91ea-40e2-96e1-154ecf645c10]: FINISHED
+[debug] [2019-11-01T17:53:16.293Z] Accepted request POST /cause-for-care/us-central1/api/signup --> api
+[debug] [2019-11-01T17:53:16.300Z] [worker-api-971caabb-081e-4878-aa9e-37f863ca7205]: BUSY
+[debug] [2019-11-01T17:53:16.613Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/davidcajas/Desktop/care-dot-com/functions","node_version":"8.16.0"}
+[debug] [2019-11-01T17:53:16.618Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-01T17:53:16.619Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-01T17:53:16.620Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T17:53:16.622Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T17:53:17.081Z] [runtime-status] Trigger "api" has been found, beginning invocation! {}
+[info] i  functions: Beginning execution of "api"
+[debug] [2019-11-01T17:53:17.082Z] [runtime-status]  {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2019-11-01T17:53:17.083Z] [runtime-status] Running api in mode HTTPS {}
+[debug] [2019-11-01T17:53:17.088Z] {"socketPath":"/var/folders/1d/y02ldx9s45l1h7hsnkzv_c9h0000gn/T/firebase_emulator_invocation_3512.sock"}
+[debug] [2019-11-01T17:53:17.088Z] [functions] Runtime ready! Sending request! {"socketPath":"/var/folders/1d/y02ldx9s45l1h7hsnkzv_c9h0000gn/T/firebase_emulator_invocation_3512.sock"}
+[debug] [2019-11-01T17:53:17.115Z] [runtime-status] Ephemeral server used! {}
+[debug] [2019-11-01T17:53:17.416Z] [runtime-status] Ephemeral server survived. {}
+[info] >  { [Error: The email address is already in use by another account.]
+[info] >    code: 'auth/email-already-in-use',
+[info] >    message: 'The email address is already in use by another account.' }
+[info] i  functions: Finished "api" in ~1s
+[debug] [2019-11-01T17:53:18.453Z] [worker-api-971caabb-081e-4878-aa9e-37f863ca7205]: IDLE
+[debug] [2019-11-01T17:55:26.648Z] File /Users/davidcajas/Desktop/care-dot-com/functions/index.js changed, reloading triggers
+[debug] [2019-11-01T17:55:27.651Z] [worker-pool]: Shutting down IDLE worker (api)
+[debug] [2019-11-01T17:55:27.657Z] [worker-~diagnostic~-3d6f6343-d459-423f-8cad-ee464250af97]: BUSY
+[debug] [2019-11-01T17:55:27.661Z] [worker-api-971caabb-081e-4878-aa9e-37f863ca7205]: exited
+[debug] [2019-11-01T17:55:27.661Z] [worker-api-971caabb-081e-4878-aa9e-37f863ca7205]: FINISHED
+[debug] [2019-11-01T17:55:27.920Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/davidcajas/Desktop/care-dot-com/functions","node_version":"8.16.0"}
+[debug] [2019-11-01T17:55:27.921Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-01T17:55:27.923Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-01T17:55:27.924Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T17:55:27.927Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T17:55:28.397Z] [worker-~diagnostic~-3d6f6343-d459-423f-8cad-ee464250af97]: exited
+[debug] [2019-11-01T17:55:28.397Z] [worker-~diagnostic~-3d6f6343-d459-423f-8cad-ee464250af97]: FINISHED
+[debug] [2019-11-01T17:55:31.259Z] File /Users/davidcajas/Desktop/care-dot-com/functions/index.js changed, reloading triggers
+[debug] [2019-11-01T17:55:32.266Z] [worker-~diagnostic~-2b04b8f0-2bf5-47fc-a340-a75348fdbb72]: BUSY
+[debug] [2019-11-01T17:55:32.519Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/davidcajas/Desktop/care-dot-com/functions","node_version":"8.16.0"}
+[debug] [2019-11-01T17:55:32.521Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-01T17:55:32.522Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-01T17:55:32.523Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T17:55:32.524Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T17:55:32.995Z] [worker-~diagnostic~-2b04b8f0-2bf5-47fc-a340-a75348fdbb72]: exited
+[debug] [2019-11-01T17:55:32.995Z] [worker-~diagnostic~-2b04b8f0-2bf5-47fc-a340-a75348fdbb72]: FINISHED
+[debug] [2019-11-01T17:59:09.747Z] File /Users/davidcajas/Desktop/care-dot-com/functions/index.js changed, reloading triggers
+[debug] [2019-11-01T17:59:10.758Z] [worker-~diagnostic~-d3d6d439-bd20-40e9-b819-f769dcd8bee6]: BUSY
+[debug] [2019-11-01T17:59:11.038Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/davidcajas/Desktop/care-dot-com/functions","node_version":"8.16.0"}
+[debug] [2019-11-01T17:59:11.040Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-01T17:59:11.042Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-01T17:59:11.043Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T17:59:11.044Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T17:59:11.636Z] [worker-~diagnostic~-d3d6d439-bd20-40e9-b819-f769dcd8bee6]: exited
+[debug] [2019-11-01T17:59:11.636Z] [worker-~diagnostic~-d3d6d439-bd20-40e9-b819-f769dcd8bee6]: FINISHED
+[debug] [2019-11-01T17:59:58.953Z] File /Users/davidcajas/Desktop/care-dot-com/functions/index.js changed, reloading triggers
+[debug] [2019-11-01T17:59:59.961Z] [worker-~diagnostic~-48a26f3a-9963-4497-8d2c-d10a30df032c]: BUSY
+[debug] [2019-11-01T18:00:00.255Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/davidcajas/Desktop/care-dot-com/functions","node_version":"8.16.0"}
+[debug] [2019-11-01T18:00:00.259Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-01T18:00:00.262Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-01T18:00:00.264Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T18:00:00.265Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T18:00:00.808Z] [worker-~diagnostic~-48a26f3a-9963-4497-8d2c-d10a30df032c]: exited
+[debug] [2019-11-01T18:00:00.808Z] [worker-~diagnostic~-48a26f3a-9963-4497-8d2c-d10a30df032c]: FINISHED
+[debug] [2019-11-01T18:00:19.323Z] File /Users/davidcajas/Desktop/care-dot-com/functions/index.js changed, reloading triggers
+[debug] [2019-11-01T18:00:20.330Z] [worker-~diagnostic~-97040175-4767-45b1-81ac-49a19ec773a0]: BUSY
+[debug] [2019-11-01T18:00:20.591Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/davidcajas/Desktop/care-dot-com/functions","node_version":"8.16.0"}
+[debug] [2019-11-01T18:00:20.592Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-01T18:00:20.595Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-01T18:00:20.597Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T18:00:20.598Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T18:00:21.068Z] [worker-~diagnostic~-97040175-4767-45b1-81ac-49a19ec773a0]: exited
+[debug] [2019-11-01T18:00:21.068Z] [worker-~diagnostic~-97040175-4767-45b1-81ac-49a19ec773a0]: FINISHED
+[debug] [2019-11-01T18:01:18.777Z] File /Users/davidcajas/Desktop/care-dot-com/functions/index.js changed, reloading triggers
+[debug] [2019-11-01T18:01:19.783Z] [worker-~diagnostic~-837182f7-4b62-4101-afb7-4df1239c6ae1]: BUSY
+[debug] [2019-11-01T18:01:20.072Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/davidcajas/Desktop/care-dot-com/functions","node_version":"8.16.0"}
+[debug] [2019-11-01T18:01:20.073Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-01T18:01:20.075Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-01T18:01:20.076Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T18:01:20.077Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T18:01:20.538Z] [worker-~diagnostic~-837182f7-4b62-4101-afb7-4df1239c6ae1]: exited
+[debug] [2019-11-01T18:01:20.538Z] [worker-~diagnostic~-837182f7-4b62-4101-afb7-4df1239c6ae1]: FINISHED
+[debug] [2019-11-01T18:03:41.883Z] File /Users/davidcajas/Desktop/care-dot-com/functions/index.js changed, reloading triggers
+[debug] [2019-11-01T18:03:42.892Z] [worker-~diagnostic~-efc5dd57-a499-4330-baeb-1ca37227bdc4]: BUSY
+[debug] [2019-11-01T18:03:43.347Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/davidcajas/Desktop/care-dot-com/functions","node_version":"8.16.0"}
+[debug] [2019-11-01T18:03:43.349Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-01T18:03:43.357Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-01T18:03:43.359Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T18:03:43.360Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T18:03:44.220Z] [worker-~diagnostic~-efc5dd57-a499-4330-baeb-1ca37227bdc4]: exited
+[debug] [2019-11-01T18:03:44.220Z] [worker-~diagnostic~-efc5dd57-a499-4330-baeb-1ca37227bdc4]: FINISHED
+[debug] [2019-11-01T18:04:17.360Z] Accepted request POST /cause-for-care/us-central1/api/signup --> api
+[debug] [2019-11-01T18:04:17.371Z] [worker-api-8f6cc096-d8c5-4a0d-a605-860a5813479d]: BUSY
+[debug] [2019-11-01T18:04:17.642Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/davidcajas/Desktop/care-dot-com/functions","node_version":"8.16.0"}
+[debug] [2019-11-01T18:04:17.644Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-01T18:04:17.646Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-01T18:04:17.647Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T18:04:17.648Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T18:04:18.064Z] [runtime-status] Trigger "api" has been found, beginning invocation! {}
+[info] i  functions: Beginning execution of "api"
+[debug] [2019-11-01T18:04:18.064Z] [runtime-status]  {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2019-11-01T18:04:18.064Z] [runtime-status] Running api in mode HTTPS {}
+[debug] [2019-11-01T18:04:18.070Z] {"socketPath":"/var/folders/1d/y02ldx9s45l1h7hsnkzv_c9h0000gn/T/firebase_emulator_invocation_3534.sock"}
+[debug] [2019-11-01T18:04:18.071Z] [functions] Runtime ready! Sending request! {"socketPath":"/var/folders/1d/y02ldx9s45l1h7hsnkzv_c9h0000gn/T/firebase_emulator_invocation_3534.sock"}
+[debug] [2019-11-01T18:04:18.090Z] [runtime-status] Ephemeral server used! {}
+[debug] [2019-11-01T18:04:18.349Z] [runtime-status] Ephemeral server survived. {}
+[info] i  functions: Finished "api" in ~2s
+[debug] [2019-11-01T18:04:20.400Z] [worker-api-8f6cc096-d8c5-4a0d-a605-860a5813479d]: IDLE
+[debug] [2019-11-01T18:04:55.819Z] File /Users/davidcajas/Desktop/care-dot-com/functions/index.js changed, reloading triggers
+[debug] [2019-11-01T18:04:56.822Z] [worker-pool]: Shutting down IDLE worker (api)
+[debug] [2019-11-01T18:04:56.837Z] [worker-~diagnostic~-99bfb2dc-cf1e-4d66-92d5-c082a7b14578]: BUSY
+[debug] [2019-11-01T18:04:56.838Z] [worker-api-8f6cc096-d8c5-4a0d-a605-860a5813479d]: exited
+[debug] [2019-11-01T18:04:56.838Z] [worker-api-8f6cc096-d8c5-4a0d-a605-860a5813479d]: FINISHED
+[debug] [2019-11-01T18:04:57.091Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/davidcajas/Desktop/care-dot-com/functions","node_version":"8.16.0"}
+[debug] [2019-11-01T18:04:57.093Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-01T18:04:57.095Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-01T18:04:57.095Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T18:04:57.096Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T18:04:57.618Z] [worker-~diagnostic~-99bfb2dc-cf1e-4d66-92d5-c082a7b14578]: exited
+[debug] [2019-11-01T18:04:57.618Z] [worker-~diagnostic~-99bfb2dc-cf1e-4d66-92d5-c082a7b14578]: FINISHED
+[debug] [2019-11-01T18:05:01.302Z] File /Users/davidcajas/Desktop/care-dot-com/functions/index.js changed, reloading triggers
+[debug] [2019-11-01T18:05:02.308Z] [worker-~diagnostic~-eb6e6e7d-b580-4860-adcb-9a58caf12367]: BUSY
+[debug] [2019-11-01T18:05:02.558Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/davidcajas/Desktop/care-dot-com/functions","node_version":"8.16.0"}
+[debug] [2019-11-01T18:05:02.560Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-01T18:05:02.561Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-01T18:05:02.563Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T18:05:02.564Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/davidcajas/Desktop/care-dot-com/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T18:05:03.064Z] [worker-~diagnostic~-eb6e6e7d-b580-4860-adcb-9a58caf12367]: exited
+[debug] [2019-11-01T18:05:03.064Z] [worker-~diagnostic~-eb6e6e7d-b580-4860-adcb-9a58caf12367]: FINISHED
