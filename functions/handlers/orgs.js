@@ -1,36 +1,33 @@
-const {db} = require('../utilities/admin');
+const { db } = require('../utilities/admin');
 const firebase = require('firebase');
-const {validSignupData, validLoginData} = require('../utilities/validation');
+const { validOrgSignupData, validLoginData } = require('../utilities/validation');
 
-exports.userSignup = (req, res) => {
-	//MODEL FOR DATABASE ENTRY
+exports.orgSignup = (req, res) => {
 	const newUser = {
 		email: req.body.email,
 		password: req.body.password,
 		confirmPassword: req.body.confirmPassword,
-		userHandle: req.body.userHandle //USERNAME OR ORGANIZATION NAME
+		orgHandle: req.body.orgHandle //USERNAME OR ORGANIZATION NAME
 		//location: country or state
 		//cause: restrict this to 5-10 caterogies
 	};
 
-	const {valid, errors} = validSignupData(newUser);
+	const { valid, errors } = validOrgSignupData(newUser);
 
 	if (!valid) return res.status(400).json(errors);
 
 	let token, userId;
-	// CHECKS FOR DUPLICATE HANDLE 'username'
-	db.doc(`/users/${newUser.userHandle}`)
+	db.doc(`/orgs/${newUser.orgHandle}`)
 		.get()
 		.then((doc) => {
 			if (doc.exists) {
-				return res.status(400).json({userHandle: 'handle already exists'});
+				return res.status(400).json({ orgHandle: 'handle already exists' });
 			} else {
 				return firebase
 					.auth()
 					.createUserWithEmailAndPassword(newUser.email, newUser.password);
 			}
 		})
-		//AUTHORIZATION TOKEN FOR SENSITIVE INFO/CONFIRMS NEW USER CREATION
 		.then((data) => {
 			userId = data.user.uid;
 			return data.user.getIdToken();
@@ -38,34 +35,32 @@ exports.userSignup = (req, res) => {
 		.then((idtoken) => {
 			token = idtoken;
 			const userCreds = {
-				userHandle: newUser.userHandle,
+				orgHandle: newUser.orgHandle,
 				email: newUser.email,
 				userId
 			};
-			return db.doc(`/users/${newUser.userHandle}`).set(userCreds);
+			return db.doc(`/orgs/${newUser.orgHandle}`).set(userCreds);
 		})
 		.then(() => {
-			return res.status(201).json({message: `user signed up real good`, token});
+			return res.status(201).json({ message: `org sign up success!`, token });
 		})
-
-		//CHECKS FOR DUPLICATE ENTRIES ON EMAIL
 		.catch((err) => {
 			console.error(err);
 			if (err.code === 'auth/email-already-in-use') {
-				return res.status(400).json({email: 'email already registered'});
+				return res.status(400).json({ email: 'email already registered' });
 			} else {
-				return res.status(500).json({error: err.code});
+				return res.status(500).json({ error: err.code });
 			}
 		});
 };
 
-exports.userLogin = (req, res) => {
+exports.orgLogin = (req, res) => {
 	const user = {
 		email: req.body.email,
 		password: req.body.password
 	};
 
-	const {valid, errors} = validLoginData(user);
+	const { valid, errors } = validLoginData(user);
 
 	if (!valid) return res.status(400).json(errors);
 
@@ -76,15 +71,15 @@ exports.userLogin = (req, res) => {
 			return data.user.getIdToken();
 		})
 		.then((token) => {
-			return res.json({token});
+			return res.json({ token });
 		})
 		// CATCHES WRONG PASSWORD
 		.catch((err) => {
 			console.error(err);
 			if (err.code === 'auth/wrong-password') {
-				return res.status(403).json({general: 'password is all messed up'});
+				return res.status(403).json({ general: 'password is all messed up' });
 			} else {
-				return res.status(500).json({error: err.code});
+				return res.status(500).json({ error: err.code });
 			}
 		});
 };
