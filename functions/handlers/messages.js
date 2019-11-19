@@ -7,6 +7,7 @@ exports.getMessages = (req, res) => {
       let messages = [];
       data.forEach(doc => {
         messages.push({
+          messageId: doc.id,
           userHandle: doc.data().userHandle,
           orgHandle: doc.data().orgHandle,
           body: doc.data().body
@@ -31,7 +32,7 @@ exports.postOneMessage = (req, res) => {
     .add(newMessage)
     .then((doc) => {
       const resMessage = newMessage;
-      resScream.messageId = doc.id;
+      resMessage.messageId = doc.id;
       res.json(resMessage);
     })
     .catch(err => {
@@ -53,7 +54,9 @@ exports.orgPostOneMessage = (req, res) => {
   db.collection('messages')
     .add(newMessage)
     .then((doc) => {
-      res.json({ message: `document ${doc.id} all good it got created` });
+      const resMessage = newMessage;
+      resMessage.messageId = doc.id;
+      res.json(resMessage);
     })
     .catch((err) => {
       res.status(500).json({ error: 'something broke dude fix it' });
