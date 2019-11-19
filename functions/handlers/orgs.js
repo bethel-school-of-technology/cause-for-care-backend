@@ -117,3 +117,21 @@ exports.searchOrgs = (req, res) => {
     })
     .catch(err => console.error(err));
 };
+
+exports.getAllOrgs = (req, res) => {
+  db.collection('orgs')
+    .get()
+    .then(data => {
+      let organizations = [];
+      data.forEach(doc => {
+        organizations.push({
+          orgHandle: doc.data().orgHandle,
+          location: doc.data().location,
+          description: doc.data().descrip,
+          cause: doc.data().cause
+        });
+      });
+      return res.json(organizations);
+    })
+    .catch(err => console.error(err));
+};

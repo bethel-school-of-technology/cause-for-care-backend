@@ -78,7 +78,6 @@ exports.getOrgUpdates = (req, res) => {
 exports.getUpdates = (req, res) => {
   db.collection('orgUpdates')
     .orderBy('createdAt', 'desc')
-    // .where('orgHandle', '==', 'org1')
     .get()
     .then(data => {
       let messages = [];
@@ -94,4 +93,4 @@ exports.getUpdates = (req, res) => {
       return res.json(messages);
     })
     .catch(err => console.error(err));
-};
+}; // gets all updates

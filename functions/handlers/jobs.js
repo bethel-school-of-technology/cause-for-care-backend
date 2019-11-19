@@ -42,6 +42,24 @@ exports.getJobs = (req, res) => {
     .catch(err => console.error(err));
 };
 
+exports.getJobListing = (req, res) => {
+  let jobData = {};
+  db.doc(`/jobs/${req.params.messageId}`)
+    .get()
+    .then(doc => {
+      if (!doc.exists) {
+        return res.status(404).json({error: 'listing not found'});
+      }
+      jobData = doc.data();
+      jobData.messageId = doc.id;
+      return res.json(jobData);
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({error: err.code});
+    });
+};
+
 //exports. jobapp >>>
 //first name
 //last name
