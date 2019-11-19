@@ -47,9 +47,9 @@ app.post('/orglogin', orgLogin);
 app.post('/org', orgAuth, addOrgDetails);
 
 //ORGUPDATES
+app.post('/orgupdate', orgAuth, postNewUpdate); // org posts message
 app.get('/orgs', getAllOrgs); // gets all orgs in org database
 app.get('/search', searchOrgs); //search by cause and location
-app.post('/orgupdate', orgAuth, postNewUpdate); // org posts message
 app.get('/orgupdates', getUpdates); //gets all updates
 app.get('/orgupdate/:messageId', getUpdate); //gets 1 update
 app.get('/getorgupdates/:orgHandle', getOrgUpdates); // gets all updates of 1 orghandle

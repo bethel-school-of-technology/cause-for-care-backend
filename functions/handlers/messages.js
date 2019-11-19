@@ -109,7 +109,7 @@ exports.commentOnUpdate = (req, res) => {
     body: req.body.body,
     createdAt: new Date().toISOString(),
     messageId: req.params.messageId,
-    userHandle: req.user.handle,
+    userHandle: req.user.userHandle,
     userImage: req.user.imageUrl
   };
   console.log(newComment);
@@ -118,7 +118,7 @@ exports.commentOnUpdate = (req, res) => {
     .get()
     .then(doc => {
       if (!doc.exists) {
-        return res.status(404).json({error: 'orgUpdate not found'});
+        return res.status(404).json({error: 'post not found'});
       }
       return doc.ref.update({commentCount: doc.data().commentCount + 1});
     })
