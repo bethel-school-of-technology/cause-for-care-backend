@@ -63,6 +63,7 @@ exports.reduceOrgDetails = data => {
   let orgDetails = {};
   //adds org description
   if (!emptyField(data.descrip.trim())) orgDetails.descrip = data.descrip;
+  if (!emptyField(data.cause.trim())) orgDetails.cause = data.cause;
   //adds org website link
   if (!emptyField(data.website.trim())) {
     if (data.website.trim().substring(0, 4) !== 'http') {

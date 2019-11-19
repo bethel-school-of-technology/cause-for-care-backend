@@ -41,3 +41,10 @@ exports.getJobs = (req, res) => {
     })
     .catch(err => console.error(err));
 };
+
+//exports. jobapp >>>
+//first name
+//last name
+//phone number
+// email
+//upload file (resume)

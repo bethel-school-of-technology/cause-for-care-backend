@@ -97,3 +97,23 @@ exports.addOrgDetails = (req, res) => {
       return res.status(500).json({error: err.code});
     });
 };
+
+exports.searchOrgs = (req, res) => {
+  db.collection('orgs')
+    .where('location', '==', `${req.body.location}`)
+    .where('cause', '==', `${req.body.cause}`)
+    .get()
+    .then(data => {
+      let organizations = [];
+      data.forEach(doc => {
+        organizations.push({
+          orgHandle: doc.data().orgHandle,
+          location: doc.data().location,
+          description: doc.data().descrip,
+          cause: doc.data().cause
+        });
+      });
+      return res.json(organizations);
+    })
+    .catch(err => console.error(err));
+};

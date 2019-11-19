@@ -8,7 +8,8 @@ exports.postNewUpdate = (req, res) => {
   const newUpdate = {
     title: req.body.title,
     body: req.body.body,
-    orgHandle: req.user.orgHandle
+    orgHandle: req.user.orgHandle,
+    createdAt: new Date().toISOString()
   };
 
   db.collection('orgUpdates')
@@ -22,4 +23,75 @@ exports.postNewUpdate = (req, res) => {
       res.status(500).json({error: 'something broke dude fix it'});
       console.error(err);
     });
+};
+
+exports.getUpdate = (req, res) => {
+  let messageData = {};
+  db.doc(`/orgUpdates/${req.params.messageId}`)
+    .get()
+    .then(doc => {
+      if (!doc.exists) {
+        return res.status(404).json({error: 'message not found'});
+      }
+      messageData = doc.data();
+      messageData.messageId = doc.id;
+      return db
+        .collection('comments')
+        .orderBy('createdAt', 'desc')
+        .where('messageId', '==', req.params.messageId)
+        .get();
+    })
+    .then(data => {
+      messageData.comments = [];
+      data.forEach(doc => {
+        messageData.comments.push(doc.data());
+      });
+      return res.json(messageData);
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({error: err.code});
+    });
+};
+
+exports.getOrgUpdates = (req, res) => {
+  db.collection('orgUpdates')
+    .orderBy('createdAt', 'desc')
+    .where('orgHandle', '==', `${req.params.orgHandle}`)
+    .get()
+    .then(data => {
+      let updates = [];
+      data.forEach(doc => {
+        updates.push({
+          messageId: doc.id,
+          userHandle: doc.data().userHandle,
+          orgHandle: doc.data().orgHandle,
+          body: doc.data().body,
+          createdAt: doc.data().createdAt
+        });
+      });
+      return res.json(updates);
+    })
+    .catch(err => console.error(err));
+};
+
+exports.getUpdates = (req, res) => {
+  db.collection('orgUpdates')
+    .orderBy('createdAt', 'desc')
+    // .where('orgHandle', '==', 'org1')
+    .get()
+    .then(data => {
+      let messages = [];
+      data.forEach(doc => {
+        messages.push({
+          messageId: doc.id,
+          userHandle: doc.data().userHandle,
+          orgHandle: doc.data().orgHandle,
+          body: doc.data().body,
+          createdAt: doc.data().createdAt
+        });
+      });
+      return res.json(messages);
+    })
+    .catch(err => console.error(err));
 };
