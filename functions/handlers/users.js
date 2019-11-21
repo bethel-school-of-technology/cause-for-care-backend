@@ -5,7 +5,7 @@ const {validSignupData, validLoginData} = require('../utilities/validation');
 
 exports.userSignup = (req, res) => {
   //MODEL FOR DATABASE ENTRY
-  // testing verison controls
+  // testing verison controls now
   const newUser = {
     email: req.body.email,
     password: req.body.password,
