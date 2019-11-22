@@ -120,7 +120,6 @@ exports.commentOnUpdate = (req, res) => {
       if (!doc.exists) {
         return res.status(404).json({error: 'post not found'});
       }
-      return doc.ref.update({commentCount: doc.data().commentCount + 1});
     })
     .then(() => {
       return db.collection('comments').add(newComment);
@@ -131,5 +130,28 @@ exports.commentOnUpdate = (req, res) => {
     .catch(err => {
       console.log(err);
       res.status(500).json({error: 'Something went wrong'});
+    });
+};
+
+exports.deleteComment = (req, res) => {
+  const document = db.doc(`/comments/${req.params.doc.id}`);
+  document
+    .get()
+    .then(doc => {
+      if (!doc.exists) {
+        return res.status(404).json({error: 'post not found'});
+      }
+      if (doc.data().userHandle !== req.user.userHandle) {
+        return res.status(403).json({error: 'credentials not authorized to do this'});
+      } else {
+        return document.delete();
+      }
+    })
+    .then(() => {
+      res.json({message: 'post deletion success!'});
+    })
+    .catch(err => {
+      console.error(err);
+      return res.status(500).json({error: err.code});
     });
 };

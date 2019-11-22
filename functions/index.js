@@ -7,12 +7,19 @@ const {
   getMessage,
   postOneMessage,
   orgPostOneMessage,
-  commentOnUpdate
+  commentOnUpdate,
+  deleteComment
 } = require('./handlers/messages');
 const {userSignup, userLogin, uploadPhoto, getAuthUser} = require('./handlers/users');
 const {orgSignup, orgLogin, addOrgDetails, searchOrgs, getAllOrgs} = require('./handlers/orgs');
-const {postNewUpdate, getUpdate, getUpdates, getOrgUpdates} = require('./handlers/orgUpdates');
-const {postOneJob, getJobs, getJobListing} = require('./handlers/jobs');
+const {
+  postNewUpdate,
+  getUpdate,
+  getUpdates,
+  getOrgUpdates,
+  deleteUpdate
+} = require('./handlers/orgUpdates');
+const {postOneJob, getJobs, getJobListing, deleteListing} = require('./handlers/jobs');
 const cors = require('cors');
 
 app.use(cors());
@@ -20,7 +27,6 @@ app.use(cors());
 //need:
 // delete job posts route
 //delete comments route
-//delete blogpost route
 // follow organization updates
 //job app route? // app.post('/job/app/:messageId); easier if it were through email...or use post one messge route somehow?
 
@@ -28,7 +34,8 @@ app.use(cors());
 
 app.post('/jobs', orgAuth, postOneJob); //posts one job with org verification
 app.get('/orgjobs', getJobs); //gets all job listings
-app.get('/jobs/:messageId', getJobListing); //gets one listing
+app.get('/job/:messageId', getJobListing); //gets one listing
+app.delete('/job/:messageId', orgAuth, deleteListing); //deletes job listing
 
 //POSTS ROUTES
 app.get('/messages', getMessages); //gets all messages
@@ -40,7 +47,7 @@ app.post('/userlogin', userLogin);
 app.post('/user/image', userAuth, uploadPhoto); //user uploads profile pic
 app.get('/user', userAuth, getAuthUser); //gets self user info
 app.post('/orgupdate/:messageId/comment', userAuth, commentOnUpdate); //user can comment on specific orgUpdate
-
+app.delete('/job/:messageId', userAuth, deleteComment); //deletes comment
 //ORG LOGIN AND SIGNUP
 app.post('/orgsignup', orgSignup);
 app.post('/orglogin', orgLogin);
@@ -48,6 +55,7 @@ app.post('/org', orgAuth, addOrgDetails);
 
 //ORGUPDATES
 app.post('/orgupdate', orgAuth, postNewUpdate); // org posts message
+app.delete('/orgupdate/:messageId', orgAuth, deleteUpdate); //deletes update
 app.get('/orgs', getAllOrgs); // gets all orgs in org database
 app.get('/search', searchOrgs); //search by cause and location
 app.get('/orgupdates', getUpdates); //gets all updates
