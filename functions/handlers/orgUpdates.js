@@ -78,14 +78,12 @@ exports.getOrgUpdates = (req, res) => {
 exports.getUpdates = (req, res) => {
   db.collection('orgUpdates')
     .orderBy('createdAt', 'desc')
-    // .where('orgHandle', '==', 'org1')
     .get()
     .then(data => {
       let messages = [];
       data.forEach(doc => {
         messages.push({
           messageId: doc.id,
-          userHandle: doc.data().userHandle,
           orgHandle: doc.data().orgHandle,
           body: doc.data().body,
           createdAt: doc.data().createdAt
@@ -94,4 +92,28 @@ exports.getUpdates = (req, res) => {
       return res.json(messages);
     })
     .catch(err => console.error(err));
+}; // gets all updates
+
+//deletes a post
+exports.deleteUpdate = (req, res) => {
+  const document = db.doc(`/orgUpdates/${req.params.messageId}`);
+  document
+    .get()
+    .then(doc => {
+      if (!doc.exists) {
+        return res.status(404).json({error: 'post not found'});
+      }
+      if (doc.data().orgHandle !== req.user.orgHandle) {
+        return res.status(403).json({error: 'credentials not authorized to do this'});
+      } else {
+        return document.delete();
+      }
+    })
+    .then(() => {
+      res.json({message: 'post deletion success!'});
+    })
+    .catch(err => {
+      console.error(err);
+      return res.status(500).json({error: err.code});
+    });
 };

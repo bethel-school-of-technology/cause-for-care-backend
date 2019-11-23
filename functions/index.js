@@ -2,69 +2,64 @@ const functions = require('firebase-functions');
 const app = require('express')();
 const userAuth = require('./utilities/userAuth');
 const orgAuth = require('./utilities/orgAuth');
-const {getMessages, getMessage, postOneMessage, orgPostOneMessage} = require('./handlers/messages');
+const {
+  getMessages,
+  getMessage,
+  postOneMessage,
+  orgPostOneMessage,
+  commentOnUpdate,
+  deleteComment
+} = require('./handlers/messages');
 const {userSignup, userLogin, uploadPhoto, getAuthUser} = require('./handlers/users');
-const {orgSignup, orgLogin, addOrgDetails, searchOrgs} = require('./handlers/orgs');
-const {postNewUpdate, getUpdate, getUpdates, getOrgUpdates} = require('./handlers/orgUpdates');
-const {postOneJob, getJobs} = require('./handlers/jobs');
+const {orgSignup, orgLogin, addOrgDetails, searchOrgs, getAllOrgs} = require('./handlers/orgs');
+const {
+  postNewUpdate,
+  getUpdate,
+  getUpdates,
+  getOrgUpdates,
+  deleteUpdate
+} = require('./handlers/orgUpdates');
+const {postOneJob, getJobs, getJobListing, deleteListing} = require('./handlers/jobs');
 const cors = require('cors');
 
 app.use(cors());
 
 //need:
-// delete messages
+// delete job posts route
+//delete comments route
 // follow organization updates
-// organization updates and blogpost
-// comment on organizations blogposts and updates
+//job app route? // app.post('/job/app/:messageId); easier if it were through email...or use post one messge route somehow?
 
 // JOBBOARD FUNCTIONS
-//posts one job with org verification
-app.post('/jobs', orgAuth, postOneJob);
-app.get('/jobs', getJobs); //gets all job listings
 
-//delete post function
-// app.post('/jobapp);
-//get one job listing
-// app.get('./job/:jobId', getJob);
+app.post('/jobs', orgAuth, postOneJob); //posts one job with org verification
+app.get('/orgjobs', getJobs); //gets all job listings
+app.get('/job/:messageId', getJobListing); //gets one listing
+app.delete('/job/:messageId', orgAuth, deleteListing); //deletes job listing
 
 //POSTS ROUTES
 app.get('/messages', getMessages); //gets all messages
 app.get('/message/:messageId', getMessage); //gets 1 message from message database
+
 // ADD USER/LOGIN TO DATABASE ROUTE // COPY AND MODIFY FOR ORGANIZATIONS
 app.post('/usersignup', userSignup);
 app.post('/userlogin', userLogin);
 app.post('/user/image', userAuth, uploadPhoto); //user uploads profile pic
 app.get('/user', userAuth, getAuthUser); //gets self user info
-app.post('/comment', userAuth, postOneMessage); //user posts message
-
+app.post('/orgupdate/:messageId/comment', userAuth, commentOnUpdate); //user can comment on specific orgUpdate
+app.delete('/job/:messageId', userAuth, deleteComment); //deletes comment
 //ORG LOGIN AND SIGNUP
 app.post('/orgsignup', orgSignup);
 app.post('/orglogin', orgLogin);
 app.post('/org', orgAuth, addOrgDetails);
 
 //ORGUPDATES
-app.get('/search', searchOrgs);
-app.post('/orgupdate', orgAuth, postNewUpdate); //change to post to orgUpdate database? // org posts message
+app.post('/orgupdate', orgAuth, postNewUpdate); // org posts message
+app.delete('/orgupdate/:messageId', orgAuth, deleteUpdate); //deletes update
+app.get('/orgs', getAllOrgs); // gets all orgs in org database
+app.get('/search', searchOrgs); //search by cause and location
 app.get('/orgupdates', getUpdates); //gets all updates
 app.get('/orgupdate/:messageId', getUpdate); //gets 1 update
 app.get('/getorgupdates/:orgHandle', getOrgUpdates); // gets all updates of 1 orghandle
-
-// ADD ENTRIES TO MESSAGES/POSTS DATABASE
-
-app.get('/organizations', (req, res) => {
-  db.collection('orgs')
-    .get()
-    .then(data => {
-      let orgs = [];
-      data.forEach(doc => {
-        orgs.push({
-          orgName: doc.data().orgName,
-          description: doc.data().description
-        });
-      });
-      return res.json(orgs);
-    })
-    .catch(err => console.error(err));
-});
 
 exports.api = functions.https.onRequest(app);

@@ -42,6 +42,47 @@ exports.getJobs = (req, res) => {
     .catch(err => console.error(err));
 };
 
+exports.getJobListing = (req, res) => {
+  let jobData = {};
+  db.doc(`/jobs/${req.params.messageId}`)
+    .get()
+    .then(doc => {
+      if (!doc.exists) {
+        return res.status(404).json({error: 'listing not found'});
+      }
+      jobData = doc.data();
+      jobData.messageId = doc.id;
+      return res.json(jobData);
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({error: err.code});
+    });
+};
+
+exports.deleteListing = (req, res) => {
+  const document = db.doc(`/jobs/${req.params.messageId}`);
+  document
+    .get()
+    .then(doc => {
+      if (!doc.exists) {
+        return res.status(404).json({error: 'post not found'});
+      }
+      if (doc.data().orgHandle !== req.user.orgHandle) {
+        return res.status(403).json({error: 'credentials not authorized to do this'});
+      } else {
+        return document.delete();
+      }
+    })
+    .then(() => {
+      res.json({message: 'post deletion success!'});
+    })
+    .catch(err => {
+      console.error(err);
+      return res.status(500).json({error: err.code});
+    });
+};
+
 //exports. jobapp >>>
 //first name
 //last name

@@ -101,3 +101,57 @@ exports.getMessage = (req, res) => {
       res.status(500).json({error: err.code});
     });
 };
+
+exports.commentOnUpdate = (req, res) => {
+  if (req.body.body.trim() === '') return res.status(400).json({comment: 'cant be empty'});
+
+  const newComment = {
+    body: req.body.body,
+    createdAt: new Date().toISOString(),
+    messageId: req.params.messageId,
+    userHandle: req.user.userHandle,
+    userImage: req.user.imageUrl
+  };
+  console.log(newComment);
+
+  db.doc(`/orgUpdates/${req.params.messageId}`)
+    .get()
+    .then(doc => {
+      if (!doc.exists) {
+        return res.status(404).json({error: 'post not found'});
+      }
+    })
+    .then(() => {
+      return db.collection('comments').add(newComment);
+    })
+    .then(() => {
+      res.json(newComment);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({error: 'Something went wrong'});
+    });
+};
+
+exports.deleteComment = (req, res) => {
+  const document = db.doc(`/comments/${req.params.doc.id}`);
+  document
+    .get()
+    .then(doc => {
+      if (!doc.exists) {
+        return res.status(404).json({error: 'post not found'});
+      }
+      if (doc.data().userHandle !== req.user.userHandle) {
+        return res.status(403).json({error: 'credentials not authorized to do this'});
+      } else {
+        return document.delete();
+      }
+    })
+    .then(() => {
+      res.json({message: 'post deletion success!'});
+    })
+    .catch(err => {
+      console.error(err);
+      return res.status(500).json({error: err.code});
+    });
+};
