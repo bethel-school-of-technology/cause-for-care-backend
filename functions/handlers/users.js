@@ -19,7 +19,7 @@ exports.userSignup = (req, res) => {
 
   if (!valid) return res.status(400).json(errors);
 
-  //PHOTO ASSIGNMENT//
+  //PHOTO ASSIGNMENT Test//
   const noImg = 'no-img.png';
   let token, userId;
   // CHECKS FOR DUPLICATE HANDLE 'username'
