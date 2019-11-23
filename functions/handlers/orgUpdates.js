@@ -84,7 +84,6 @@ exports.getUpdates = (req, res) => {
       data.forEach(doc => {
         messages.push({
           messageId: doc.id,
-          userHandle: doc.data().userHandle,
           orgHandle: doc.data().orgHandle,
           body: doc.data().body,
           createdAt: doc.data().createdAt
